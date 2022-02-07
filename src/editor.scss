@@ -1,0 +1,93 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-dachtom-lastest-posts-block {
+    max-width: unset;
+	&-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr 1fr auto;
+		grid-gap: 2px;
+
+		grid-template-areas: 	"a a b b"
+								"c c c c"
+								"d d e e"
+								"f f f f";
+
+		&.is-panel-close {
+			@media screen and (min-width: calc(992px + 160px + 16px)) {
+				grid-template-areas:
+					"a b c c"
+					"f f d e";
+			}
+		}
+
+		&.is-panel-open {
+			@media screen and (min-width: calc(992px + 160px + 281px + 16px)) {
+				grid-template-areas:
+					"a b c c"
+					"f f d e";
+			}
+		}
+	}
+
+	&-item {
+		justify-content: center;
+    	align-items: center;
+		min-height: 50vh;
+		overflow: hidden;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		
+
+		&:first-child {
+			grid-area: a;
+		}
+
+		&:nth-child(2) {
+			grid-area: b;
+		}
+		&:nth-child(3) {
+			grid-area: c;
+		}
+		&:nth-child(4) {
+			grid-area: d;
+		}
+		&:nth-child(5) {
+			grid-area: e;
+		}
+		&:nth-child(6) {
+			grid-area: f;
+		}
+
+
+	}
+
+	&-link {
+		position: absolute;
+		z-index: 50;
+		color: white;
+		text-decoration: none;
+	}
+
+	&-picture {
+		width: 100%;
+		height: 100%;
+		background-size: cover;
+	}
+
+	&-overlay {
+		position: absolute;
+		z-index: 40;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: unset !important;
+		background-color: rgba(0, 0, 0, 0.7) !important;
+	}
+}
