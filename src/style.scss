@@ -13,6 +13,7 @@
 								"f f f f";
 
 		@media screen and (min-width: 992px) {
+			grid-template-rows: 1fr 1fr auto;
 			grid-template-areas:
 				"a b c c"
 				"f f d e";
@@ -76,7 +77,15 @@
 	&-link {
 		position: absolute;
 		z-index: 50;
+		font-size: 12px;
 
+		@media screen and (min-width: 768px){
+			font-size: 14px;
+		}
+
+		@media screen and (min-width: 960px){
+			font-size: 16px;
+		}
 	}
 
 	&-picture {
